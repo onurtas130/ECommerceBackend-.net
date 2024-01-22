@@ -17,14 +17,14 @@ namespace ElIşiWebApi.Controllers
             _exampleService = exampleService;
         }
 
-        [Authorize(Roles = UserRoles.Admin)]
+        //[Authorize(Roles = UserRoles.Admin)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _exampleService.GetAllAsync());
         }
 
-        [Authorize(Roles = UserRoles.Member + "," + UserRoles.Admin)]
+        //[Authorize(Roles = UserRoles.Member + "," + UserRoles.Admin)]
         [HttpPost]
         public async Task<IActionResult> Post(Example example)
         {

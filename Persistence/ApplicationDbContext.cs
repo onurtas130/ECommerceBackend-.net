@@ -45,7 +45,7 @@ namespace Persistence
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("");
+            optionsBuilder.UseNpgsql("User ID=user;Password=1234;Host=localhost;Port=5432;Database=ElisiDB;");
 
             optionsBuilder.UseLazyLoadingProxies();
 
