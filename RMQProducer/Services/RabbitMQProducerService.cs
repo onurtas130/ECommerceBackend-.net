@@ -1,10 +1,7 @@
 ﻿using Application.RabbitMQ;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace RMQProducer.Services
 {

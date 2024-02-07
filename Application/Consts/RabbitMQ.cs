@@ -10,17 +10,21 @@ namespace Application.Consts
     {
         public static class Exchanges
         {
+            public static string firstDirectExchange = "firstDirectExchange";
 
+            public static string firstTopicExchange = "firstTopicExchange";
+
+            public static string firstHeaderExchange = "firstHeaderExchange";
         }
 
         public static class Queues
         {
+            public static string queue1 = "queue1";
 
+            public static string queue2 = "queue2";
+
+            public static string queue3 = "queue3";
         }
 
-        public static class RoutingKeys
-        {
-
-        }
     }
 }

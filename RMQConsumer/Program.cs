@@ -3,11 +3,11 @@
 
 using RMQConsumer;
 
-RabbitMQConsumerService rmq = new RabbitMQConsumerService();
+//var rmq = new RabbitMQConsumerService();
 
-rmq.DeclareExchanges();
-rmq.DeclareQueues();
-rmq.BindQueues();
-rmq.ConsumeMessage();
-Console.ReadLine();
+//rmq.DeclareExchanges();
+//rmq.DeclareQueues();
+//rmq.BindQueues();
+//rmq.ConsumeMessages();
+//Console.ReadLine();
 
