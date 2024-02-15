@@ -21,6 +21,7 @@
     <ProjectReference Include="..\Business\Business.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
+    <ProjectReference Include="..\Redis\Redis.csproj" />
     <ProjectReference Include="..\RMQConsumer\RMQConsumer.csproj" />
     <ProjectReference Include="..\RMQProducer\RMQProducer.csproj" />
   </ItemGroup>

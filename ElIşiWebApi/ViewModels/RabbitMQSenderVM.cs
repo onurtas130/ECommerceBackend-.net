@@ -1,4 +1,4 @@
-﻿using Domain.models;
+﻿using Application.RabbitMQ.Models;
 
 namespace ElIşiWebApi.ViewModels
 {
