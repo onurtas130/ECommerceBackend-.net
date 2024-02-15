@@ -1,4 +1,6 @@
-﻿using Application.Generics;
+﻿using Application.Consts;
+using Application.Generics;
+using Application.Redis;
 using Application.Services;
 using Business.Generics;
 using Domain.Entities;
@@ -14,7 +16,7 @@ namespace Business.Services
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public ExampleService(IUnitOfWork unitOfWork) : base(unitOfWork)
+        public ExampleService(IUnitOfWork unitOfWork, IRedisCacheService redisCacheService) : base(unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

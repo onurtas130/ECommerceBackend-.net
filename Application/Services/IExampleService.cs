@@ -10,6 +10,6 @@ namespace Application.Services
 {
     public interface IExampleService : IGenericService<Example>
     {
-     
+        
     }
 }

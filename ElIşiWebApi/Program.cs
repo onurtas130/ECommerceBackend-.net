@@ -3,6 +3,7 @@ using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Persistence;
+using Redis;
 using RMQProducer;
 using System.Text;
 
@@ -13,6 +14,7 @@ builder.Services.AddPersistenceServices();
 builder.Services.AddBusinessServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddRMQProducerServices();
+builder.Services.AddRedisServices();
 
 // Add services to the container.
 
