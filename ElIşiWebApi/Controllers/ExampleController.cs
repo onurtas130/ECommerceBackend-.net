@@ -58,11 +58,5 @@ namespace ElIşiWebApi.Controllers
             return BadRequest(serviceResult);   
         }
 
-        [HttpGet("examplesRedis")]
-        public async Task<IActionResult> GetExamplesAsync()
-        {
-            return Ok(await _exampleService.GetExamplesAsync());
-        }
-
     }
 }

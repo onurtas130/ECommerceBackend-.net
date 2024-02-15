@@ -37,7 +37,7 @@ namespace Redis
             _distributedCache.SetString(key, jsonData, options);
         }
 
-        /// <inheritdoc cref="GetAndSetData{T}(Func{T}, string, TimeSpan)" />
+        /// <inheritdoc cref="GetAndSetDataAsync{T}(Func{Task{T}}, string, TimeSpan)" />
         public async Task<T> GetAndSetDataAsync<T>(Func<Task<T>> func, string key, TimeSpan cacheDuration)
         {
             string jsonData;
@@ -47,6 +47,32 @@ namespace Redis
             if(jsonData is null)
             {
                 var data = await func();
+
+                jsonData = JsonSerializer.Serialize(data);
+
+                var options = new DistributedCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = cacheDuration
+                };
+
+                _distributedCache.SetString(key, jsonData, options);
+
+                return data;
+            }
+
+            return JsonSerializer.Deserialize<T>(jsonData);
+        }
+
+        /// <inheritdoc cref="GetAndSetData{T}(Func{T}, string, TimeSpan)" />
+        public T GetAndSetData<T>(Func<T> method, string key, TimeSpan cacheDuration)
+        {
+            string jsonData;
+
+            jsonData = _distributedCache.GetString(key);
+
+            if (jsonData is null)
+            {
+                var data = method();
 
                 jsonData = JsonSerializer.Serialize(data);
 
